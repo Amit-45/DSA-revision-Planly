@@ -1,0 +1,35 @@
+/*
+// Definition for a Node.
+class ListNode {
+    public int data;
+    public ListNode prev;
+    public ListNode next;
+    public ListNode();
+    public ListNode(int data);
+    public ListNode(int data, ListNode prev, ListNode next);
+};
+*/
+
+class Solution {
+    public ListNode insertBeforeTail(ListNode head, int X) {
+        if(head.next == null) { // 1. Check single node
+            ListNode newHead = new ListNode(X, null, head);
+            head.prev = newHead;
+            return newHead;
+        }
+
+        ListNode tail = head;
+        ListNode prev = null;
+
+        while(tail.next != null) {
+            prev = tail; // 2. Remember previous node
+            tail = tail.next; // 3. Move tail forward
+        }
+
+        ListNode newNode = new ListNode(X, prev, tail); // 4. Create node before tail
+        prev.next = newNode; // 5. Previous points to new node
+        tail.prev = newNode; // 6. Tail points back to new node
+
+        return head; // 7. Return head
+    }
+}
