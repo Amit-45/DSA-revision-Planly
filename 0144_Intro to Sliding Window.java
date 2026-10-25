@@ -1,6 +1,7 @@
 -----------------------------------------------------------
 CONSTANT WINDOW 
 -----------------------------------------------------------
+Ex- Find maximum sum obtained by picking 4 elements consecutively
 class Solution {
     public int maxSum(int[] arr,int k) {
         int n=arr.length;
@@ -25,5 +26,25 @@ class Solution {
 }
 
 --------------------------------------------------------------
-
+VARIABLE WINDOW 
 --------------------------------------------------------------
+Ex - Longest subarray/substring where sum<=k
+// If solved using BRUTE:
+class Solution {
+    public int maxSubarrayLength(int[] arr,int k) {
+        int n=arr.length,maxLen=0;
+
+        for(int i=0;i<n;i++) {
+            int sum=0;
+
+            for(int j=i;j<n;j++) {
+                sum+=arr[j]; // Extend subarray
+
+                if(sum>k) break; // Stop if sum exceeds k
+
+                maxLen=Math.max(maxLen,j-i+1); // Update max length
+            }
+        }
+        return maxLen;
+    }
+}
