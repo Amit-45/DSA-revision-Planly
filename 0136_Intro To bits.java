@@ -84,7 +84,7 @@ Toggle the ith bit
 }
 
 ----------------------------------------------------------------------------
-Remove the last set bit
+Remove the last set bit (rightmost)
 ------------------------------------------------------------------------
 public int removeLastSetBit(int n) {
     return n & (n - 1); // 1. AND with n-1 → Remove rightmost set bit
