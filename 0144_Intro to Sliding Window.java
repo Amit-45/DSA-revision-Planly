@@ -58,7 +58,7 @@ class Solution {
         while(r<n) {
             sum+=arr[r]; // 1. Expand window
 
-            while(sum>k) {
+            while(sum>k) {   --------------------> Check of sum<=k -> If not VALID : SHRINK 
                 sum-=arr[l]; // 2. Shrink window
                 l++;
             }
