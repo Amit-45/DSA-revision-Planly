@@ -29,7 +29,7 @@ class Solution {
 VARIABLE WINDOW 
 --------------------------------------------------------------
 Ex - Longest subarray/substring where sum<=k
-// If solved using BRUTE:
+// If solved using BRUTE: Generate all subarrays
 class Solution {
     public int maxSubarrayLength(int[] arr,int k) {
         int n=arr.length,maxLen=0;
