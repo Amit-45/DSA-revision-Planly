@@ -84,9 +84,28 @@ Toggle the ith bit
 }
 
 ----------------------------------------------------------------------------
-Remoev the last set bit
+Remove the last set bit
 ------------------------------------------------------------------------
 public int removeLastSetBit(int n) {
     return n & (n - 1); // 1. AND with n-1 → Remove rightmost set bit
 }
+----------------------------------------------------------------------------
+Check if number is a power of 2
+----------------------------------------------------------------------------
+public boolean isPowerOfTwo(int n) {
+    return n > 0 && (n & (n - 1)) == 0; // 1. Positive + remove last set bit → Check zero
+}
+
+-----------------------------------------------------------------------------
+Count number of set bits(no 1 liner)
+-----------------------------------------------------------------------------
+public int countSetBits(int n) {
+    int count = 0;
+    while(n > 0) {
+        n = n & (n - 1); // 1. Remove rightmost set bit
+        count++; // 2. Count removed bit
+    }
+    return count; // 3. Return total set bits
+}
+---------------------------------------------------------------------------------
   
