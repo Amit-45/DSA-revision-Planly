@@ -70,3 +70,30 @@ class Solution {
         return maxLen;
     }
 }
+//OPTMIAL : Use if instead of while 
+while version: Expand → Shrink until valid → Update max length.
+if version: Expand → Shrink once if invalid → Update max length.
+
+
+class Solution {
+    public int maxSubarrayLength(int[] arr,int k) {
+        int n=arr.length;
+        int l=0,r=0,sum=0,maxLen=0;
+
+        while(r<n) {
+            sum+=arr[r]; // Expand
+
+            if(sum>k) { // Shrink once if invalid
+                sum-=arr[l];
+                l++;
+            }
+
+            if(sum<=k)
+                maxLen=Math.max(maxLen,r-l+1); // Update max length
+
+            r++; // Move right
+        }
+
+        return maxLen;
+    }
+}
