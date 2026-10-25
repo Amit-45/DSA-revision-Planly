@@ -28,7 +28,7 @@ class Solution {
 --------------------------------------------------------------
 VARIABLE WINDOW 
 --------------------------------------------------------------
-Ex - Longest subarray/substring where sum<=k
+Ex - Longest subarray/substring where sum<=k (All array elementa are non negative)
 // If solved using BRUTE: Generate all subarrays
 class Solution {
     public int maxSubarrayLength(int[] arr,int k) {
@@ -62,8 +62,8 @@ class Solution {
                 sum-=arr[l]; // 2. Shrink window
                 l++;
             }
-
-            maxLen=Math.max(maxLen,r-l+1); // 3. Update max length
+        if(sum<=k) //THIS LINE YOU CAN IGNORE IF YOU WANT 
+                maxLen=Math.max(maxLen,r-l+1);// 3. Update max length
             r++; // 4. Move right pointer
         }
 
