@@ -63,5 +63,30 @@ Check if the ith bit is set
         return (n & (1 << i)) != 0; // 1. Left Shift → AND → Check bit
     }
 }
-  
+
+-------------------------------------------------------------------------
+Set the ith bit
+-------------------------------------------------------------------------
+public int setBit(int n, int i) {
+    return n | (1 << i); // 1. Left shift → OR → Set bit
+}
+--------------------------------------------------------------------------
+Clear the ith bit 
+--------------------------------------------------------------------------
+public int clearBit(int n, int i) {
+    return n & ~(1 << i); // 1. Left shift → NOT → AND → Clear bit
+}
+---------------------------------------------------------------------------
+Toggle the ith bit 
+---------------------------------------------------------------------------
+    public int toggleBit(int n, int i) {
+    return n ^ (1 << i); // 1. Left shift → XOR → Toggle bit
+}
+
+----------------------------------------------------------------------------
+Remoev the last set bit
+------------------------------------------------------------------------
+public int removeLastSetBit(int n) {
+    return n & (n - 1); // 1. AND with n-1 → Remove rightmost set bit
+}
   
