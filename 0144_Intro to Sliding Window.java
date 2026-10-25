@@ -40,11 +40,33 @@ class Solution {
             for(int j=i;j<n;j++) {
                 sum+=arr[j]; // Extend subarray
 
-                if(sum>k) break; // Stop if sum exceeds k
+                if(sum>k) break; // BIT OF OPTMMIZATION
 
                 maxLen=Math.max(maxLen,j-i+1); // Update max length
             }
         }
+        return maxLen;
+    }
+}
+
+//BETTER SOLUTION : Sliding window : EXPAND and SHRINK
+class Solution {
+    public int maxSubarrayLength(int[] arr,int k) {
+        int n=arr.length;
+        int l=0,r=0,sum=0,maxLen=0;
+
+        while(r<n) {
+            sum+=arr[r]; // 1. Expand window
+
+            while(sum>k) {
+                sum-=arr[l]; // 2. Shrink window
+                l++;
+            }
+
+            maxLen=Math.max(maxLen,r-l+1); // 3. Update max length
+            r++; // 4. Move right pointer
+        }
+
         return maxLen;
     }
 }
