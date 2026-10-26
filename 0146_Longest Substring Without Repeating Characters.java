@@ -6,7 +6,7 @@ class Solution {
 
         while(r<n) {
             // Check duplicate and move left
-            if(hash[s.charAt(r)]!=-1)
+            if(hash[s.charAt(r)]!=-1) ----------------> not in Hashmap
                 l=Math.max(hash[s.charAt(r)]+1,l);
 
             // Calculate length and update max
