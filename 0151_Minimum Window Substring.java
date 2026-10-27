@@ -37,3 +37,9 @@ while(r<s.length()) {
         // Save minimum and shrink left
     }
 }
+
+
+Initialize: Build the hash of t once.
+Expand (r): Move right and count required characters.
+Shrink (l): While valid, save the minimum and shrink from the left.
+Return: Extract the smallest valid substring.
