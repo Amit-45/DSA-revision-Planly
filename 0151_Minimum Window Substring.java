@@ -1,3 +1,4 @@
+//BRUTE to OPTIMAL ->  by removing the inner loop restart and shrinking the window only when valid.
 class Solution {
     public String minWindow(String s,String t) {
         int minLen=Integer.MAX_VALUE,sIndex=-1; // 1. Initialize minimum
