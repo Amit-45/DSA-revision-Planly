@@ -25,3 +25,15 @@ class Solution {
         return sIndex==-1?"":s.substring(sIndex,sIndex+minLen); // 10. Return answer
     }
 }
+
+
+//CHNAGES in OPTIMAL 
+int[] hash=new int[256]; // Build hash once
+int l=0,r=0;
+
+while(r<s.length()) {
+    // Expand right
+    while(count==t.length()) {
+        // Save minimum and shrink left
+    }
+}
