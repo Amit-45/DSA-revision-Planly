@@ -40,3 +40,51 @@ class StackQueue {
         return st1.isEmpty();
     }
 }
+--------------------------------------------------------------------------------
+OPTIMAL CODE APPROACH : Put all elements from s1 to s2 after all push approach
+--------------------------------------------------------------------------------
+import java.util.*;
+
+class StackQueue {
+    private Stack<Integer> input,output;
+
+    // Constructor: Initialize s1 and s2
+    public StackQueue(){
+        input=new Stack<>();
+        output=new Stack<>();
+    }
+
+    // Push: x → s1
+    public void push(int x){
+        input.push(x);
+    }
+
+    // Pop: If s2 not empty → Pop s2; else → Transfer s1 → s2 → Pop s2
+    public int pop(){
+        if(output.isEmpty()){
+            while(!input.isEmpty()){
+                output.push(input.pop());
+            }
+        }
+
+        if(output.isEmpty())return -1;
+        return output.pop();
+    }
+
+    // Peek: If s2 not empty → Read s2; else → Transfer s1 → s2 → Read s2
+    public int peek(){
+        if(output.isEmpty()){
+            while(!input.isEmpty()){
+                output.push(input.pop());
+            }
+        }
+
+        if(output.isEmpty())return -1;
+        return output.peek();
+    }
+
+    // IsEmpty: Check s1 empty AND s2 empty
+    public boolean isEmpty(){
+        return input.isEmpty()&&output.isEmpty();
+    }
+}
