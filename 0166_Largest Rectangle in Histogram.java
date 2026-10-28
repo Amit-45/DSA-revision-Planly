@@ -1,5 +1,4 @@
-------------------OPTIMAL----------------------------------------------
----------OPTIMAL-----------------------------------------------------------------------------
+--------------------OPTIMAL-----------------------------------------------------------------------------
 Push: Push indices into the stack while heights are increasing.
 Pop: When a smaller height appears, pop taller bars and calculate their areas.
 NSE: Current index i is the Next Smaller Element index for the popped bar.
