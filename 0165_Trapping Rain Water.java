@@ -1,4 +1,11 @@
 -----------------------------------------OPTIMAL -----------------------------------------------------------------------------------
+Initialize: Set two pointers at both ends and initialize left maximum, right maximum, and total water to zero.
+Compare: Process the smaller height → Because the smaller side determines the water level.
+Left: If left maximum is greater than current height → Add the difference to total; otherwise update left maximum → Because water is trapped only below a taller boundary.
+Right: If right maximum is greater than current height → Add the difference to total; otherwise update right maximum → Because water is trapped only below a taller boundary.
+Move: Move the pointer of the processed side inward → Because its trapped water has been calculated.
+Return: Return total trapped water
+-------------------------------------------------------------------------------------------------------------------------------------    
 class Solution {
     public int trap(int[] height) {
         int n=height.length;
