@@ -1,9 +1,12 @@
 ------------------OPTIMAL----------------------------------------------
-Traverse → Go left to right.
-Push → Store the current index.
-Pop → Current height is smaller than or equal to the stack top.
-Calculate → Current index = NSE; new stack top = PSE.
-Remaining bars → NSE = n; calculate their areas.
+---------OPTIMAL-----------------------------------------------------------------------------
+Push: Push indices into the stack while heights are increasing.
+Pop: When a smaller height appears, pop taller bars and calculate their areas.
+NSE: Current index i is the Next Smaller Element index for the popped bar.
+PSE: After popping, the new stack top is the Previous Smaller Element index.
+Calculate Area: Find the width → Calculate the area → Update maxArea.
+Remaining Bars: Use a virtual height 0 at the end to process all remaining bars.
+Return: Return maxArea.
 
 import java.util.*;
 
