@@ -1,8 +1,36 @@
+-----------------------------------------OPTIMAL -----------------------------------------------------------------------------------
+class Solution {
+    public int trap(int[] height) {
+        int n=height.length;
+        int left=0,right=n-1;
+        int leftMax=0,rightMax=0,total=0;
 
+        // Traverse from both ends
+        while(left<right) {
+            // Process the smaller height
+            if(height[left]<=height[right]) {
+                // If left maximum is bigger → Add trapped water
+                if(leftMax>height[left]) total+=leftMax-height[left];
+                // Otherwise → Update left maximum
+                else leftMax=height[left];
 
+                // Move left pointer ahead
+                left++;
+            } else {
+                // If right maximum is bigger → Add trapped water
+                if(rightMax>height[right]) total+=rightMax-height[right];
+                // Otherwise → Update right maximum
+                else rightMax=height[right];
 
+                // Move right pointer backward
+                right--;
+            }
+        }
 
-
+        // Return total trapped water
+        return total;
+    }
+}
 ------------------------------------------BRUTE------------------------------------------------------------------------------------
 class Solution {
     //BRUTE
