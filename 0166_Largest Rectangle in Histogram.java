@@ -8,54 +8,49 @@ Remaining Bars: Use a virtual height 0 at the end to process all remaining bars.
 Return: Return maxArea.
 
 import java.util.*;
-
 class Solution {
     public int largestRectangleArea(int[] heights) {
         int n=heights.length;
         Stack<Integer> st=new Stack<>();
-        int largestArea=0;
+        int maxArea=0;
 
-        // Traverse: Go left to right
+        // 1. Push: Push indices into the stack while heights are increasing
         for(int i=0;i<n;i++) {
-            // Pop: Current height is smaller or equal to stack top
+
+            // 2. Pop: When a smaller height appears, pop taller bars and calculate their areas
             while(!st.isEmpty() && heights[st.peek()]>=heights[i]) {
                 int ind=st.pop();
 
-                // NSE: Current index; PSE: New stack top
+                // 3. NSE: Current index i is the Next Smaller Element index for the popped bar
                 int nse=i;
-                int pse=st.isEmpty() ? -1 : st.peek();
 
-                // Area: Height × Width
+                // 4. PSE: After popping, the new stack top is the Previous Smaller Element index
+                int pse=st.isEmpty()?-1:st.peek();
+
+                // 5. Calculate Area: Find the width → Calculate the area → Update maxArea
                 int width=nse-pse-1;
                 int area=heights[ind]*width;
-
-                // Update: Store maximum area
-                largestArea=Math.max(largestArea,area);
+                maxArea=Math.max(maxArea,area);
             }
 
-            // Push: Store current index
             st.push(i);
         }
 
-        // Remaining bars: NSE is n
+        // 6. Remaining Bars: Use a virtual height 0 at the end to process all remaining bars
         while(!st.isEmpty()) {
             int ind=st.pop();
             int nse=n;
-            int pse=st.isEmpty() ? -1 : st.peek();
+            int pse=st.isEmpty()?-1:st.peek();
 
-            // Area: Height × Width
             int width=nse-pse-1;
             int area=heights[ind]*width;
-
-            // Update: Store maximum area
-            largestArea=Math.max(largestArea,area);
+            maxArea=Math.max(maxArea,area);
         }
 
-        // Return: Largest rectangle area
-        return largestArea;
+        // 7. Return: Return maxArea
+        return maxArea;
     }
 }
-
   
 -------------------BRUTE-----------------------------------------------
 
