@@ -1,3 +1,5 @@
+Differnece from NGE : WRAP AROUND FROM LAST TO FIRST INDEX ALLOWED 
+------------------------------------------------------------------
 import java.util.*;
 
 class Solution {
