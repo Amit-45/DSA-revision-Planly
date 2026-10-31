@@ -48,5 +48,27 @@ class Solution {
         return checkValid(0,0,s,dp);
     }
 }
----------------OPTIMAL(GREEDY Range Tracking Approach)
+---------------OPTIMAL(GREEDY Range Tracking Approach)------------
+class Solution {
+    //OPTIMAL
+    public boolean isValid(String s) {
+        int minOpen=0,maxOpen=0;
+        for(int i=0;i<s.length();i++) {
+            char c=s.charAt(i);
+            if(c=='(') {
+                minOpen++;
+                maxOpen++;
+            } else if(c==')') {
+                minOpen--;
+                maxOpen--;
+            } else {
+                minOpen--;
+                maxOpen++;
+            }
+            if(maxOpen<0) return false;
+            minOpen=Math.max(0,minOpen);
+        }
+        return minOpen==0;
+    }
+}
   
