@@ -60,14 +60,14 @@ class LRUCache {
         insertAfterHead(newNode);
         map.put(key,newNode);
     }
-    // 4. DELETE: Connect neighbours
+    // 4. DELETE helper function: Connect neighbours
     private void deleteNode(Node node) {
         Node prevNode=node.prev;
         Node nextNode=node.next;
         prevNode.next=nextNode;
         nextNode.prev=prevNode;
     }
-    // 5. INSERT: Connect after head
+    // 5. INSERT helper function: Connect after head
     private void insertAfterHead(Node node) {
         Node nextNode=head.next;
         head.next=node;
