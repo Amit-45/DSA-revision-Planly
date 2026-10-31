@@ -1,3 +1,17 @@
+MERGE INTERVAL CHEETSHEET :
+1. N Meetings in One Room
+- Sort by end time → Finish early to make room for more meetings.
+- start > freeTime → Select; otherwise skip → Return maximum count.
+2. Non-overlapping Intervals
+- Sort by end time → Keep intervals that finish early.
+- Overlap → Remove; no overlap → Keep → Return N - count.
+3. Insert Interval
+- Left → Add intervals before the new interval.
+- Middle → Merge overlaps → Add merged interval → Right → Add remaining intervals.
+4. Merge Intervals
+- Sort by start time → Traverse intervals from left to right.
+- No overlap → Add; overlap → Merge using Math.max().
+-------------------------------------------------------------------------------------------------------------
 import java.util.*;
 
 class Solution {
