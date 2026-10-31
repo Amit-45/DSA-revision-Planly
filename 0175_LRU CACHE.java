@@ -1,3 +1,5 @@
+1 HashMap + 1 DLL + Capacity
+
 INITILISE → GET → PUT → DELETE → INSERT
 - GET: Find value → Delete → Move to Front → Return.
 - PUT Existing: Update value → Delete node from curr position →Move to Front.
