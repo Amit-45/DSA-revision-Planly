@@ -20,15 +20,20 @@ PUT(key,value)
       NO  → Cache full?
               YES → Get minFreq DLL
                     → Get LRU (tail.prev)
-                    → Remove from Map
+                    → Remove from keyNode
                     → Remove from DLL
                     → Decrease curSize
 
-            → Create new node (freq = 1)
-            → Insert at front of freq 1 DLL
-            → Add to keyNode
-            → minFreq = 1
-            → Increase curSize
+              NO  → Skip eviction
+
+            → After either branch (YES/NO):
+                → Create new node (freq = 1)
+                → Get/Create freq 1 DLL
+                → Insert at front (MRU)
+                → Add to keyNode
+                → minFreq = 1
+                → Increase curSize
+                → Return
 
 UPDATE FREQUENCY
   → Remove from old DLL
