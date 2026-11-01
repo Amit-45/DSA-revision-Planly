@@ -1,3 +1,6 @@
+Inorder: CREATE THREAD → LEFT → REMOVE → VISIT
+Preorder: CREATE THREAD → VISIT → LEFT → REMOVE
+--------------------------------------------------------
 class Solution {
     public List<Integer> preorder(TreeNode root) {
         List<Integer> ans=new ArrayList<>();
