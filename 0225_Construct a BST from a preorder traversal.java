@@ -1,6 +1,6 @@
 Brute: Naively create the BST by inserting every preorder element one by one.
 Better: BST inorder traversal is always sorted; use the same range-validation concept as Validate BST to build the tree from preorder.
-Optimal: Use an index + upper bound; create the root, build LEFT with root.data as the new bound, and RIGHT with the old bound.
+Optimal: Same range concept as Validate BST; LEFT gets root.data as the new bound, RIGHT keeps the old bound. Difference: Validate BST checks existing nodes; this constructs nodes from preorder.
 --------------------------------------Optimal----------------------------------------------------------
 class Solution {
     int i=0;
