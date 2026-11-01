@@ -2,7 +2,7 @@ Brute: A BST's inorder traversal is always sorted. So, store all node values in 
 optimal: Use BST properties to search for the key while updating predecessor/successor candidates; if found, find the rightmost node in LEFT and leftmost node in RIGHT subtree; return -1 if either is missing.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 class Solution {
-    public int[] succPredBST(TreeNode root,int key) {
+    public List<Integer> succPredBST(TreeNode root,int key) {
         TreeNode pred=null,succ=null;
         while(root!=null) {
             if(key>root.data) {
@@ -10,7 +10,7 @@ class Solution {
                 root=root.right;
             }
             else if(key<root.data) {
-                succ=root;           // Curr node can be SUCC → MOVE LEFT
+                succ=root;            // Curr node can be SUCC → MOVE LEFT
                 root=root.left;
             }
             else {
@@ -31,9 +31,9 @@ class Solution {
         }
 
         // NULL → -1
-        return new int[]{
+        return Arrays.asList(
             pred==null?-1:pred.data,
             succ==null?-1:succ.data
-        };
+        );
     }
 }
