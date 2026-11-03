@@ -47,3 +47,36 @@ public class Main {
         sc.close();
     }
 }
+---------------------------------------ADJACENCY LIST (for weighted Graph)-----------------------------------------------------------------------------
+import java.util.*;
+
+class Pair {
+    int node,weight;
+
+    Pair(int node,int weight) {
+        this.node=node;
+        this.weight=weight;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt(),m=sc.nextInt();
+
+        // CREATE ADJACENCY LIST
+        ArrayList<ArrayList<Pair>> adj=new ArrayList<>();
+
+        // INITIALIZE EMPTY LISTS
+        for(int i=0;i<=n;i++)adj.add(new ArrayList<>());
+
+        // READ EDGES → ADD NEIGHBOUR + WEIGHT BOTH DIRECTIONS
+        for(int i=0;i<m;i++) {
+            int u=sc.nextInt(),v=sc.nextInt(),w=sc.nextInt();
+            adj.get(u).add(new Pair(v,w));
+            adj.get(v).add(new Pair(u,w));
+        }
+
+        sc.close();
+    }
+}
