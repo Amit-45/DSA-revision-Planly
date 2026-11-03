@@ -1,3 +1,6 @@
+-----------------------------------------------------------------------------------------------
+DFS RECursive:  M → MARK | W → WORK | A* → CHECK NEIGHBOURS → RECURSIVE CALL → BACKTRACK
+-----------------------------------------------------------------------------------------------
 import java.util.*;
 
 // DFS function to prepare graph and start traversal
@@ -32,7 +35,7 @@ class Solution {
 }
 
 -----------------------------------------------------------------------------------------------------------
-Iterative DFS using STack 
+Iterative DFS using Stack  : PUSH + MARK → R → REMOVE (POP) | W → WORK | A* → CHECK NEIGHBOURS → UNVISITED: MARK + PUSH → REPEAT
 ------------------------------------------------------------------------------------------------------------
 import java.util.*;
 
