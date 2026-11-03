@@ -23,7 +23,6 @@ class Solution {
             }
             }
         }
-    }
 
     public int[][] floodFill(int[][] image,int sr,int sc,int newColor) {
         int iniColor=image[sr][sc]; // STORE ORIGINAL COLOR
