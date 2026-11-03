@@ -1,5 +1,21 @@
 ## Graphs – Memory Triggers
 
+-----------------------------------------------------------------
+Graph: VERTICES + EDGES
+Directed: ONE-WAY
+Undirected: TWO-WAY
+Cyclic: START NODE → RETURN TO SAME NODE
+Acyclic: NO CYCLE
+Component: CONNECTED GROUP, DISCONNECTED FROM OTHER GROUPS
+Path: CONNECTED NODES, NO REPEAT
+Simple Path: NO REPEATED VERTEX
+Closed Path: START = END
+Undirected Degree: COUNT CONNECTED EDGES
+Degree Property: SUM OF DEGREES = 2E
+Directed Degree: IN = INCOMING | OUT = OUTGOING
+Weighted: EDGE + COST
+Unweighted: EDGE WITHOUT COST
+-----------------------------------------------------------------
 ### 1. Graph Representation
 
 - Adjacency Matrix – Directed: Matrix banao → Har edge uthao → `adj[u][v]=1`.
