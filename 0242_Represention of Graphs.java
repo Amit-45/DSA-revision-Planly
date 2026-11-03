@@ -21,3 +21,6 @@ public class Main {
         sc.close();
     }
 }
+
+Note: For directed graphs, if there is an edge between u and v it means the edge only goes from u to v, i.e., v is the neighbor of u, but vice versa is not true.
+-------------ADJACENCY LIST-----------------------------------------------------------------------
