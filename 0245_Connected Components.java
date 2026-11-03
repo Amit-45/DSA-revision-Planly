@@ -13,7 +13,7 @@ class Solution {
         }
 
         int count=0;
-        for(int i=0;i<V;i++) {               
+        for(int i=0;i<V;i++) {                                 
             if(!vis[i]) {   //if visited -> skip
                 count++; //unvisted node -> increase count
                 dfs(i,adj,vis);
@@ -26,7 +26,7 @@ class Solution {
     //recursive DFS function
     private void dfs(int node,List<List<Integer>> adj,boolean[] vis) {
         vis[node]=true;
-        for(int it:adj.get(node)) {
+        for(int it:adj.get(node)) {      //LIST: adj.get(node)
             if(!vis[it])dfs(it,adj,vis);
         }
     }
