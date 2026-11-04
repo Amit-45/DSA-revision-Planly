@@ -1,6 +1,7 @@
 import java.util.*;
+
 class Solution {
-    public List<Integer> eventualSafeNodes(int V,List<List<Integer>> adj) {
+    public List<Integer> eventualSafeNodes(int V,int[][] adj) {
 
         // CREATE REVERSE GRAPH + OUTDEGREE
         List<List<Integer>> revAdj=new ArrayList<>();
@@ -12,9 +13,9 @@ class Solution {
 
         // REVERSE EDGES + CALCULATE OUTDEGREE
         for(int i=0;i<V;i++) {
-            outDegree[i]=adj.get(i).size();
+            outDegree[i]=adj[i].length;
 
-            for(int it:adj.get(i)) {
+            for(int it:adj[i]) {
                 revAdj.get(it).add(i);
             }
         }
