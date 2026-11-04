@@ -62,16 +62,17 @@ import java.util.*;
 class Solution {
 
     public List<List<String>> findSequences(String beginWord,String endWord,List<String> wordList) {
-        Set<String> st=new HashSet<>(wordList); // HASHSET
+        Set<String> st=new HashSet<>(wordList); // CREATE HASHSET
         Map<String,Integer> dist=new HashMap<>(); // DISTANCE MAP
         Queue<String> q=new LinkedList<>(); // BFS QUEUE
 
-        if(!st.contains(endWord)) return new ArrayList<>();
+        if(!st.contains(endWord)) return new ArrayList<>(); // CHECK TARGET
 
         q.add(beginWord); // ADD SOURCE
-        st.remove(beginWord);
-        dist.put(beginWord,1); // START DISTANCE
+        st.remove(beginWord); // MARK SOURCE VISITED
+        dist.put(beginWord,1); // INITIAL DISTANCE
 
+        // BFS: CALCULATE SHORTEST DISTANCES
         while(!q.isEmpty()) {
             String word=q.poll(); // POLL WORD
             int steps=dist.get(word); // GET DISTANCE
@@ -92,15 +93,18 @@ class Solution {
             }
         }
 
+        if(!dist.containsKey(endWord)) return new ArrayList<>(); // CHECK PATH EXISTS
+
         List<List<String>> ans=new ArrayList<>();
         List<String> seq=new ArrayList<>();
         seq.add(endWord); // START DFS FROM TARGET
 
         dfs(endWord,beginWord,seq,dist,ans);
 
-        return ans;
+        return ans; // RETURN ALL SHORTEST PATHS
     }
 
+    // DFS: RECONSTRUCT SHORTEST PATHS
     private void dfs(String word,String beginWord,List<String> seq,
                      Map<String,Integer> dist,List<List<String>> ans) {
 
@@ -111,7 +115,7 @@ class Solution {
             return;
         }
 
-        int steps=dist.get(word); // CURRENT DISTANCE
+        int steps=dist.get(word); // GET CURRENT DISTANCE
 
         for(int i=0;i<word.length();i++) {
             char[] arr=word.toCharArray();
