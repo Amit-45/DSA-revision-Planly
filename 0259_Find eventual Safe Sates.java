@@ -1,7 +1,7 @@
 import java.util.*;
 
 class Solution {
-    public List<Integer> eventualSafeNodes(int V,int[][] adj) {
+    public int[] eventualSafeNodes(int V,int[][] adj) {
 
         // CREATE REVERSE GRAPH + OUTDEGREE
         List<List<Integer>> revAdj=new ArrayList<>();
@@ -46,8 +46,15 @@ class Solution {
             }
         }
 
-        // SORT ANSWER + RETURN
+        // SORT ANSWER
         Collections.sort(ans);
-        return ans;
+
+        // CONVERT LIST TO ARRAY
+        int[] result=new int[ans.size()];
+        for(int i=0;i<ans.size();i++) {
+            result[i]=ans.get(i);
+        }
+
+        return result;
     }
 }
