@@ -1,12 +1,12 @@
-------RECUR---------------------------
+-----------------------------RECUR-------------------------------
 f(n){
       oneStep = f(n-1)
       twoStep = f(n-2)
       return oneStep + twoStep
 }
----------MEMO--------------------------------
+---------MEMO = RECURSION + DP ARRAY--------------------------------
 CREATE DP → FILL -1 → BASE CASE → CHECK STORED → RECURSIVE CALLS → STORE ANSWER → RETURN
-----------------------------------------------
+--------------------------------------------------------------------
 import java.util.*;
 class Solution {
     private int func(int n,int[] dp) {
@@ -24,9 +24,9 @@ class Solution {
         return func(n,dp);
     }
 }
--------TABUL--------------------------------
+-------TABULATION = ITERATION + DP ARRAY--------------------------------
 HANDLE SMALL N → CREATE DP → SET BASE CASES → LOOP 2 TO N → ADD PREVIOUS TWO → RETURN DP[N]
--------------------------------------------
+-------------------------------------------------------------------------
 class Solution {
     public int climbStairs(int n) {
         if(n<=1) return 1;
