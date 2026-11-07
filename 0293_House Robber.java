@@ -61,3 +61,52 @@ class Solution {
         return Math.max(ans1,ans2);
     }
 }
+----------------TABULATION----------------------
+class Solution {
+    private int func(int[] arr) {
+        int n = arr.length;
+        int[] dp = new int[n];
+
+        dp[0] = arr[0];
+
+        for(int i=1;i<n;i++) {
+            int pick = arr[i];
+
+            if(i>1) {
+                pick += dp[i-2];
+            }
+
+            int nonPick = dp[i-1];
+
+            dp[i] = Math.max(pick,nonPick);
+        }
+
+        return dp[n-1];
+    }
+
+    public int houseRobber(int[] money) {
+        int n = money.length;
+
+        if(n == 0) return 0;
+        if(n == 1) return money[0];
+
+        int[] arr1 = new int[n-1];
+        int[] arr2 = new int[n-1];
+
+        for(int i=0;i<n-1;i++) {
+            arr1[i] = money[i];
+            arr2[i] = money[i+1];
+        }
+
+        int ans1 = func(arr1);
+        int ans2 = func(arr2);
+
+        return Math.max(ans1,ans2);
+    }
+
+    public static void main(String[] args) {
+        int[] money = {1,5,1,2,6};
+        Solution sol = new Solution();
+        System.out.println(sol.houseRobber(money));
+    }
+}
