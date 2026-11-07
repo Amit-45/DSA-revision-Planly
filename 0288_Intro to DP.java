@@ -30,6 +30,7 @@ Answer = 5.
 A. Memoization (Top-Down)
 ------------------------------------------------------------------------------
 Recursion + DP array
+---------------------------------------------------------------------------
 Thought process:
 - Start from the main problem (f(n)).
 - Break it into smaller problems using recursion.
@@ -56,6 +57,7 @@ Memory triggers:
 B. Tabulation (Bottom-Up)
 --------------------------------------------------------------------
 Iteration + DP array
+--------------------------------------------------------------
 Thought process:
 - Start from the base cases.
 - Calculate smaller answers first.
@@ -83,6 +85,7 @@ Memory triggers:
 C. Space Optimization
 ------------------------------------------------------
 Two variables instead of DP array
+----------------------------------------------
 Thought process:
 
 Observe:
