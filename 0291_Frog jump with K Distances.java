@@ -80,6 +80,8 @@ class Solution {
     }
 }
 -------------SPACE OPTIMIZATION-----------------------------------------------------
+CREATE DP[K] → LOOP I=1 TO N-1 → INITIALIZE MAX → LOOP J=1 TO K → CHECK VALID INDEX → PREVIOUS INDEX = (I-J)%K → CALCULATE JUMP → TAKE MINIMUM → STORE AT I%K → RETURN DP[(N-1)%K]
+----------------------------------------------------------------------------------
 class Solution {
     public int frogJump(int[] heights,int k) {
         int n=heights.length;
