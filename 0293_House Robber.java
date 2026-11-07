@@ -103,10 +103,43 @@ class Solution {
 
         return Math.max(ans1,ans2);
     }
+}
+--------SPACE OPTIMIZATION--------------------------------
+Additonal optimization: Instead of arr1 a nd arr2 (that takes exptra space) we can use START and END 
+For first case:  start=0, end=n-2
+FOr 2nd case : start=1 end =n-1
 
-    public static void main(String[] args) {
-        int[] money = {1,5,1,2,6};
-        Solution sol = new Solution();
-        System.out.println(sol.houseRobber(money));
+class Solution {
+    private int func(int[] arr,int start,int end) {
+        int prev = arr[start];
+        int prev2 = 0;
+
+        for(int i=start+1;i<=end;i++) {
+            int pick = arr[i];
+
+            if(i>start+1) {
+                pick += prev2;
+            }
+
+            int nonPick = prev;
+            int cur_i = Math.max(pick,nonPick);
+
+            prev2 = prev;
+            prev = cur_i;
+        }
+
+        return prev;
+    }
+
+    public int houseRobber(int[] money) {
+        int n = money.length;
+
+        if(n == 0) return 0;
+        if(n == 1) return money[0];
+
+        int ans1 = func(money,0,n-2);
+        int ans2 = func(money,1,n-1);
+
+        return Math.max(ans1,ans2);
     }
 }
