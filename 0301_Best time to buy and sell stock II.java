@@ -80,3 +80,21 @@ class Solution {
         return func(0,0,n,arr);
     }
 }
+
+--------------SPACE OPTIMISED----------------------------------------
+class Solution {
+    public int stockBuySell(int[] arr,int n) {
+        int[] ahead=new int[2];
+        int[] cur=new int[2];
+
+        for(int ind=n-1;ind>=0;ind--) {
+            cur[0]=Math.max(-arr[ind]+ahead[1],ahead[0]);
+
+            cur[1]=Math.max(arr[ind]+ahead[0],ahead[1]);
+
+            ahead=cur.clone();
+        }
+
+        return ahead[0];
+    }
+}
