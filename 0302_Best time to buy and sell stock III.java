@@ -72,4 +72,39 @@ class Solution {
         return dp[0][0][2];
     }
 }
+-------------Space Optimi----------------------------
+
+class Solution {
+    public int stockBuySell(int[] arr, int n) {
+        int[][] ahead = new int[2][3];
+        int[][] cur = new int[2][3];
+
+        for(int ind=n-1; ind>=0; ind--) {
+            for(int buy=0; buy<=1; buy++) {
+                for(int cap=1; cap<=2; cap++) {
+
+                    if(buy == 0) {
+                        cur[buy][cap] = Math.max(
+                            ahead[0][cap],
+                            -arr[ind] + ahead[1][cap]
+                        );
+                    }
+
+                    if(buy == 1) {
+                        cur[buy][cap] = Math.max(
+                            ahead[1][cap],
+                            arr[ind] + ahead[0][cap-1]
+                        );
+                    }
+                }
+            }
+
+            int[][] temp = ahead;
+            ahead = cur;
+            cur = temp;
+        }
+
+        return ahead[0][2];
+    }
+}
 
