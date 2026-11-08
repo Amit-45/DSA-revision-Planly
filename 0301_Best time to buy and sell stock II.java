@@ -1,9 +1,12 @@
 ---------------------RECUR---------------------------------------
 buy=0 → Can buy or skip.
 buy=1 → Can sell or skip.
-Buying → Subtract price.
-Selling → Add price.
-Return maximum of both choices.
+Buying → Subtract price: -arr[ind] because money goes out of our pocket.
+Selling → Add price: +arr[ind] because money comes into our pocket.
+ind+1 → Move to the next day after making a choice.
+n → Total number of days; it does not change.
+arr → Same input price array; it does not change.
+Return maximum → Choose the better profit between the two choices using Math.max().
 ----------------------------RECUR CODE-----------------------------------------------
 class Solution {
     private int func(int ind,int buy,int n,int[] arr) {
