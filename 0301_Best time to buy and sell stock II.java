@@ -33,7 +33,49 @@ class Solution {
 
         return profit;
     }
+-----------------MEMO----------------------------------
+import java.util.*;
 
+class Solution {
+    private int func(int ind,int buy,int n,int[] arr,int[][] dp) {
+        // Base case
+        if(ind==n) return 0;
+
+        // Check if answer is already calculated
+        if(dp[ind][buy]!=-1) return dp[ind][buy];
+
+        int profit=0;
+
+        // We can buy
+        if(buy==0) {
+            int buyStock=-arr[ind]+func(ind+1,1,n,arr,dp);
+            int skip=func(ind+1,0,n,arr,dp);
+
+            profit=Math.max(buyStock,skip);
+        }
+
+        // We can sell
+        else {
+            int sellStock=arr[ind]+func(ind+1,0,n,arr,dp);
+            int skip=func(ind+1,1,n,arr,dp);
+
+            profit=Math.max(sellStock,skip);
+        }
+
+        // Store the answer
+        return dp[ind][buy]=profit;
+    }
+
+    public int stockBuySell(int[] arr,int n) {
+        int[][] dp=new int[n][2];
+
+        for(int[] row:dp) {
+            Arrays.fill(row,-1);
+        }
+
+        return func(0,0,n,arr,dp);
+    }
+}
     public int stockBuySell(int[] arr,int n) {
         return func(0,0,n,arr);
     }
