@@ -58,4 +58,51 @@ class Solution {
     }
 }
 }
+--------------------TABU-------------------------------------
+class Solution {
+    private int MOD=(int)1e9+7;
+    public int count(int[] coins,int N,int amount) {
+        long[][] dp=new long[N][amount+1];
+        // Base case
+        for(int target=0;target<=amount;target++) {
+            if(target%coins[0]==0)
+                dp[0][target]=1;
+        }
+        // Fill DP table
+        for(int ind=1;ind<N;ind++) {
+            for(int target=0;target<=amount;target++) {
+                long notTaken=dp[ind-1][target];
 
+                long taken=0;
+                if(coins[ind]<=target)
+                    taken=dp[ind][target-coins[ind]];
+
+                dp[ind][target]=(notTaken+taken)%MOD;
+            }
+        }
+        return (int)dp[N-1][amount];
+    }
+}
+---------------------SPACE OPTI----------------------
+class Solution {
+    private int MOD=(int)1e9+7;
+    public int count(int[] coins,int N,int amount) {
+        long[] prev=new long[amount+1];
+        for(int target=0;target<=amount;target++) {
+            if(target%coins[0]==0)
+                prev[target]=1;
+        }
+        for(int ind=1;ind<N;ind++) {
+            long[] cur=new long[amount+1];
+            for(int target=0;target<=amount;target++) {
+                long notTaken=prev[target];
+                long taken=0;
+                if(coins[ind]<=target)
+                    taken=cur[target-coins[ind]];
+                cur[target]=(notTaken+taken)%MOD;
+            }
+            prev=cur;
+        }
+        return (int)prev[amount];
+    }
+}
