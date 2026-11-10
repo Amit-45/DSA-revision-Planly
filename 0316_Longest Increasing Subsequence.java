@@ -103,7 +103,7 @@ class Solution {
         return next[0];
     }
 }
--------------------Binary Search(OPTIMAL)-----------------------------------------
+-------------------Binary Search - Patience sort+ Lower Bound(OPTIMAL)-----------------------------------------
 import java.util.*;
 class Solution {
     public int LIS(int[] nums) {
