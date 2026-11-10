@@ -103,7 +103,7 @@ class Solution {
         return next[0];
     }
 }
--------------------Binary Search-----------------------------------------
+-------------------Binary Search(OPTIMAL)-----------------------------------------
 import java.util.*;
 class Solution {
     public int LIS(int[] nums) {
