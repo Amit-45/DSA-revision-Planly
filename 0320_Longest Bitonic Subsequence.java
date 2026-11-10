@@ -1,6 +1,5 @@
 --------------------Tabulation (LIS + LDS DP)--------------------------------
 import java.util.*;
-
 class Solution {
     public int LongestBitonicSequence(int[] arr) {
         int n=arr.length;
@@ -37,9 +36,7 @@ class Solution {
             }
 
             // 7. COMBINE LIS + LDS - 1
-            if(LIS[i]>1 && LDS[i]>1){
-                maxLen=Math.max(maxLen,LIS[i]+LDS[i]-1);
-            }
+            maxLen=Math.max(maxLen,LIS[i]+LDS[i]-1);
         }
 
         // 8. RETURN MAX
