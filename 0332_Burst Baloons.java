@@ -1,4 +1,4 @@
-----------------RECUR--------------------------
+----------------RECUR(PARTITION DP)--------------------------
 class Solution {
     private int func(int i,int j,int[] nums) {
         if(i>j)
@@ -101,3 +101,4 @@ class Solution {
         return dp[1][n];
     }
 }
+---------------------------SPACE OPTIMIZATION(Not possible)------------------------
