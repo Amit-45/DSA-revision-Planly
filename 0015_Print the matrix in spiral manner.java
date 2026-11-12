@@ -1,3 +1,27 @@
+----------------MEMORY TRIGGERS-------------------
+class Solution {
+    public List<Integer> spiralOrder(int[][] matrix) {
+            List<Integer> ans = new ArrayList<>();
+            int n=matrix.length;
+            int m=matrix[0].length;
+
+            Forward  -> <=
+            Backward -> >=
+            while(ans.size<m*n){
+                for(condition && AL size){} Fixed row=up;    Start= Move= Stop=         [up][]
+                for(condition && AL size){} Fixed col=right; Start= Move= Stop=         [][right]
+                for(condition && AL size){} Fixed row=down;  Start= Move= Stop=         [down][]
+                for(condition && AL size){} Fixed col=left;  Start= Move= Stop=         [][left]
+                left++;
+                right--;
+                up++;
+                down--''
+            }
+    }
+}
+
+------------------CODE----------------------------------
+
 import java.util.*;
 class Solution {
     public List<Integer> spiralOrder(int[][] matrix) {
