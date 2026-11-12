@@ -8,14 +8,14 @@ class Solution {
             Forward  -> <=
             Backward -> >=
             while(ans.size<m*n){
-                for(condition && AL size){} Fixed row=up;    Start= Move= Stop=         [up][]
-                for(condition && AL size){} Fixed col=right; Start= Move= Stop=         [][right]
-                for(condition && AL size){} Fixed row=down;  Start= Move= Stop=         [down][]
-                for(condition && AL size){} Fixed col=left;  Start= Move= Stop=         [][left]
+                for(condition && AL size){} Fixed row=up;    Start=left;    Move=j++; Stop=right;       [up][]
+                for(condition && AL size){} Fixed col=right; Start=up+1;    Move=i++; Stop=down-1;      [][right]
+                for(condition && AL size){} Fixed row=down;  Start=right;   Move=j--; Stop=left;        [down][]
+                for(condition && AL size){} Fixed col=left;  Start=down-1;  Move=i--; Stop=up+1;        [][left]
                 left++;
                 right--;
                 up++;
-                down--''
+                down--;
             }
     }
 }
