@@ -57,6 +57,7 @@ class Solution {
         while(j<=hi) temp[k++]=a[j++];
 
         // Copy TEMP to MAIN ARRAY
+        // Why low+x ?? ->TEMP index starts at 0; MAIN ARRAY index starts at lo. Hence a[lo+x] = temp[x].
         for(int x=0;x<temp.length;x++) {
             a[lo+x]=temp[x];
         }
