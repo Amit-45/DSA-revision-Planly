@@ -26,9 +26,7 @@ NORMAL MERGE SORT                 COUNT INVERSIONS(Modified Merge Sort)
 
 RETURN: Sorted Array              RETURN: Inversion Count
 
-
-
-
+--------------------------CODE--------------------------------
 class Solution {
 
     long sortCount(int[] a, int lo, int hi) {
