@@ -26,6 +26,12 @@ class Solution {
     }
 }
 
+DUPLIACTE:
+    if(i>0 && nums[i]==nums[i-1])
+    if(j>i+1 && nums[j]==nums[j-1])
+    while(k<l && nums[k]==nums[k-1])
+    while(k<l && nums[l]==nums[l+1]) (only this is +)
+
 -----------CODE-----------
 class Solution {
     public List<List<Integer>> fourSum(int[] nums, int target) {
