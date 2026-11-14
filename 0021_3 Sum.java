@@ -1,5 +1,33 @@
 class Solution {
     public List<List<Integer>> threeSum(int[] nums) {
+        AL<AL>
+        sort the array
+
+        for(i){
+            DUP of i
+
+            int j, int k
+
+            while(j<k){
+                calc sum:
+
+                if(sum<0) -> j++
+                if(sum>0) -> k--
+                if(sum==0) -> {
+                    Add it to list
+                    j++;
+                    k--;
+                    DUP of j -> j++
+                    DUP of k -> k--
+                }
+            }
+        }
+        return ans;
+    }
+}
+------------------------------------------------------------
+class Solution {
+    public List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> ans = new ArrayList<>();
         Arrays.sort(nums);
 
