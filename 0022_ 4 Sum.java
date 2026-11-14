@@ -1,3 +1,32 @@
+Memory triggers:
+------------------
+class Solution {
+    public List<List<Integer>> fourSum(int[] nums, int target) {
+        AL<AL>
+        sort the array 
+        for(i){
+            DUp of i 
+            for(j){
+                DUP of j
+                int k, int l 
+                while(k<l)
+                    calc sum :
+                        if sum<target -> k++
+                        if sum> target -> l--
+                        if sum==target -> {
+                            Add it to list
+                            k++;
+                            l--;
+                            DUP of k -> k++
+                            DUP of L -> l--
+                        }
+            }
+        }
+        return ans;
+    }
+}
+
+-----------CODE-----------
 class Solution {
     public List<List<Integer>> fourSum(int[] nums, int target) {
         List<List<Integer>> ans = new ArrayList<>();
