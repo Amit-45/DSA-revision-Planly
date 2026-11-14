@@ -1,3 +1,34 @@
+NORMAL MERGE SORT                 COUNT INVERSIONS(Modified Merge Sort)
+
+1. merge() :                      1. merge() :
+   Sort two halves                   Sort two halves + Count inversions
+   - Compare LH and RH               - Compare LH and RH
+   - Take smaller element            - If arr[i] <= arr[j] -> Take left
+   - Copy remaining elements         - If arr[i] > arr[j] -> Take right
+   - Copy TEMP to MAIN ARRAY             count += (mid-i+1)
+                                     - Copy remaining elements
+                                     - Copy TEMP to MAIN ARRAY
+
+
+2. mergeHelper() :                2. mergeHelper() :
+   - Find mid                         - Find mid
+   - Sort LH                          - Sort LH -> leftCount
+   - Sort RH                          - Sort RH -> rightCount
+   - Merge both                       - Merge both -> mergeCount
+                                      - Total = leftCount + rightCount + mergeCount
+                                      - Return total count
+
+
+3. mergeSort() :                  3. mergeSort() :
+   - mergeSortHelper(nums,0,n-1);     - return mergeSortHelper(nums,0,n-1);
+   - return nums;
+
+
+RETURN: Sorted Array              RETURN: Inversion Count
+
+
+
+
 class Solution {
 
     long sortCount(int[] a, int lo, int hi) {
