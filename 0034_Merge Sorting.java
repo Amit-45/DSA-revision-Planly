@@ -1,5 +1,5 @@
 ------------pseudo code ------------------------
-1. merge() : sort two halves, add it back to array 
+1. merge() : sort two halves, add it back to MAIN ARRAY from TEMP ARRAY 
 2. mergeHelper() : 
     -Find mid 
     -Sort LH
