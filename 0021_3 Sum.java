@@ -25,6 +25,11 @@ class Solution {
         return ans;
     }
 }
+
+DUPLCATE:
+if(i>0 && nums[i]==nums[i-1])
+while(j<k && nums[j]==nums[j-1])
+while(j<k && nums[k]==nums[k+1])  // only this is +
 ------------------------------------------------------------
 class Solution {
     public List<List<Integer>> threeSum(int[] nums) {
